@@ -437,41 +437,100 @@
 
 ## Code-first
 
-- luent API vs DataAnnotations.
+- Fluent API vs DataAnnotations.
 - DbSet, DbContext.
+- Configurations via IEntityTypeConfiguration<T>.
+- Value converters & value objects.
+- Backing fields.
 
 ## Migrations
 
 - Add-Migration, Update-Database.
 - Up/Down methods.
-- Seeding.
+- Seeding (HasData).
+- Handling migration conflicts.
+- Generating SQL scripts from migrations.
+- Applying migrations at runtime
 
 ## LINQ queries
 
-- Translating to SQL.
-- Tracking vs NoTracking queries.
+- Translation to SQL & client-evaluation rules.
+- Tracking vs NoTracking queries (AsNoTracking).
+- Compiled queries.
+- IQueryable vs IEnumerable.
+- Projection best practices (selecting DTOs).
+- Filtered include (Include(p => p.Items.Where(...))).
+- Pagination (Skip/Take) and pitfalls.
 
 ## Relationships & navigation properties
 
 - One-to-many, many-to-many.
 - Shadow properties.
 - Foreign key conventions.
+- Join tables for many-to-many relationships.
+- Optional vs required relationships.
+- Owned entities & owned collections.
 
-## Eager, lazy, explicit loading:
+## Eager loading
 
-- Include/ThenInclude.
+- Include / ThenInclude.
+- Filtered Include (Include(x => x.Items.Where(...))).
+- Multiple Includes.
+- Single Query vs Split Query (EF Core 5+): AsSingleQuery(), AsSplitQuery() and Handling cartesian explosion.
+
+## Lazy loading
+
 - Lazy loading proxies.
-- Explicit loading via context.Entry.
+- Requirements (virtual properties, proxies enabled).
+- N+1 problem dangers.
 
-## Transactions:
+## Explicit loading
+
+- context.Entry(entity).Collection(...).Load()
+- context.Entry(entity).Reference(...).Load()
+
+## Global query filters
+
+- Temporal tables & time travel queries.
+- Execute raw SQL (FromSql, ExecuteSql).
+- Interceptors (logging, soft delete, multi-tenancy).
+- Query tags (TagWith).
+- Batching vs non-batching behavior.
+
+## Transactions
 
 - BeginTransaction.
-- SaveChanges + rollback.
+- SaveChanges + rollback patterns.
+- Ambient transactions (TransactionScope).
+- Execution strategies & resiliency (connection retries).
 
-## Repository & Unit of Work patterns:
+## Repository & Unit of Work patterns
 
 - Abstraction over EF Core.
-- Avoid over-abstraction pitfalls.
+- Why over-abstracting can be harmful.
+- When repositories still make sense (DDD aggregates).
+- CQRS and EF Core.
+
+## Performance & optimization
+
+- Change tracker behavior (AutoDetectChangesEnabled).
+- Using AsNoTracking for read-heavy scenarios.
+- Compiled queries.
+- Bulk operations (via EFPlus or Dapper).
+- Index configuration.
+- Avoiding cartesian joins with Includes.
+
+## Concurrency & locking
+
+- Concurrency tokens ([Timestamp], IsRowVersion).
+- Optimistic concurrency exceptions.
+- Handling concurrency conflicts (client wins/server wins).
+
+## DbContext management
+
+- Scoped lifetime in ASP.NET Core DI.
+- Disposing contexts.
+- Pooling DbContexts (AddDbContextPool).
 
 # 9. Design Patterns
 
