@@ -475,7 +475,7 @@
 
 # 9. Design Patterns
 
-## Creational: Singleton, Factory, Builder
+## Creational:
 
 ### Singleton:
 
@@ -483,7 +483,7 @@
 
 ### Builder:
 
-## Structural: Adapter, Decorator, Facade
+## Structural:
 
 ### Adapter:
 
@@ -491,7 +491,7 @@
 
 ### Facade:
 
-## Behavioral: Strategy, Observer, Command
+## Behavioral:
 
 ### Strategy: 
 
