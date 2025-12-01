@@ -1,6 +1,6 @@
 # 1. C# Language Fundamentals
 
-Value vs Reference types:
+## Value vs Reference types:
 
 - Value types stored on stack; reference types on heap (conceptually).
 - Copy semantics: value types copy data, reference types copy references.
@@ -8,7 +8,7 @@ Value vs Reference types:
 - Immutable vs mutable behaviors.
 - Passing by value vs by reference (ref, out, in).
 
-Type casting (is, as, implicit, explicit)
+## Type casting (is, as, implicit, explicit)
 
 - is: type checking, pattern matching (x is MyType t).
 - as: safe cast returning null instead of exception.
@@ -16,84 +16,84 @@ Type casting (is, as, implicit, explicit)
 - Explicit: narrowing conversions, may throw exceptions.
 - Custom casting operators (implicit operator, explicit operator).
 
-Nullable types:
+## Nullable types:
 
 - Nullable<T> / T? for value types.
 - Null-coalescing operator: ??, ??=.
 - Null-conditional operator: ?..
 - Nullable reference types (NRTs): string?, #nullable enable.
 
-Strings, StringBuilder:
+## Strings, StringBuilder:
 
 - Strings are immutable.
 - Common operations: interpolation, formatting, comparison.
 - String interning.
 - StringBuilder for performance in heavy concatenation.
 
-Collections & Generics
+## Collections & Generics
 
 - Generic collections: List, Dictionary, HashSet, Queue, Stack.
 - ObservableCollection, ConcurrentBag, ConcurrentDictionary.
 - IEnumerable vs IQueryable.
 - Constraints: where T : class, new(), etc.
 
-Enums, Structs, Tuples:
+## Enums, Structs, Tuples:
 
 - Enums: underlying types, flags enum.
 - Structs: lightweight, no inheritance, must avoid heavy logic.
 - Tuples: ValueTuple, deconstruction, named members.
 
-Namespaces & Assemblies:
+## Namespaces & Assemblies:
 
 - Namespaces for organization.
 - Assemblies: .dll, .exe; metadata, manifest.
 - Using directives, global using.
 
-Dynamic & var:
+## Dynamic & var:
 
 - var: compile-time type inference.
 - dynamic: runtime binding, possible exceptions.
 - COM interop / JSON deserialization scenarios.
 
-Record types:
+## Record types:
 
 - Immutability, with expressions, value-based equality.
 
-Pattern matching:
+## Pattern matching:
 
 - Type patterns, property patterns, switch expressions.
 
 # 2. Object-Oriented Programming (OOP)
 
-Encapsulation:
+## Encapsulation:
 
 - Access modifiers: private, protected, internal, public.
 - Getters/setters; auto-properties; backing fields.
 
-Abstraction:
+## Abstraction:
 
 - Abstract classes, interfaces.
 - Hiding implementation details.
 
-Inheritance:
+## Inheritance:
 
 - Base/derived classes, virtual/override.
 - Sealed classes/methods.
 - Constructor chaining.
 
-Polymorphism:
+## Polymorphism:
 
 - Runtime polymorphism: virtual methods.
 - Compile-time polymorphism: overloading.
 - Interface-based polymorphism.
 
-Interfaces vs Abstract classes:
+## Interfaces vs Abstract classes:
 
 - Multiple interface inheritance vs single base class.
 - When to choose which.
 - Default interface methods.
 
-Method Overloading & Overriding:
+## Method Overloading & Overriding:
 
 - Overloading: same name, different signatures.
 - Overriding: virtual, override, sealed override.
@@ -101,54 +101,54 @@ Method Overloading & Overriding:
 
 # 3. Advanced C# Concepts
 
-Delegates & Events:
+## Delegates & Events:
 
 - Delegate types, multicast delegates.
 - Events: publisher/subscriber model.
 - EventHandler, EventArgs.
 
-Lambda Expressions:
+## Lambda Expressions:
 
 - Syntax variations.
 - Capture rules (closures).
 - Expression-bodied members.
 
-Func, Action, Predicate:
+## Func, Action, Predicate:
 
 - Func: returns value.
 - Action: no return value.
 - Predicate: returns bool.
 - Common LINQ usage.
 
-LINQ (method + query syntax):
+## LINQ (method + query syntax):
 
 - Select, Where, GroupBy, Join, OrderBy.
 - Deferred execution vs immediate execution.
 - IQueryable vs IEnumerable.
 - Projection and anonymous types.
 
-Extension methods:
+## Extension methods:
 
 - Static class + static method + this keyword.
 - Best practices—don’t overuse.
 
-Reflection
+## Reflection
 
 - Getting types, properties, attributes at runtime.
 - Activator.CreateInstance.
 - Performance considerations.
 
-Iterators & yield:
+## Iterators & yield:
 
 - yield return, yield break.
 - State machine compilation.
 
-Attributes
+## Attributes
 
 - Applying/custom attributes.
 - Reading via reflection.
 
-Span<T>, Memory<T>:
+## Span<T>, Memory<T>:
 
 - Stack-allocated slices.
 - High-performance memory access.
@@ -156,36 +156,36 @@ Span<T>, Memory<T>:
 
 # 4. Memory Management
 
-Stack vs Heap:
+## Stack vs Heap:
 
 - Value vs reference storage.
 - Execution context stack frames.
 - Large object heap (LOH).
 
-Garbage Collection:
+## Garbage Collection:
 
 - Generations (0,1,2).
 - Finalization queue.
 - Server vs workstation GC.
 - Forced GC: GC.Collect() (discouraged).
 
-IDisposable & using:
+## IDisposable & using:
 
 - Deterministic cleanup.
 - IAsyncDisposable and await using.
 
-Finalizers:
+## Finalizers:
 
 - ~ClassName().
 - Costly; use only when needed.
 - Interaction with GC.
 
-Boxing & Unboxing:
+## Boxing & Unboxing:
 
 - Value type → object → value type.
 - Performance cost and memory.
 
-Memory leaks (event handlers, static refs):
+## Memory leaks (event handlers, static refs):
 
 - Unsubscribed event handlers.
 - Static collections holding references.
@@ -193,63 +193,63 @@ Memory leaks (event handlers, static refs):
 
 # 5. Exception Handling
 
-try / catch / finally:
+## try / catch / finally:
 
 - Multiple catch blocks.
 - Catching base vs derived exceptions.
 - Finally always executes.
 
-Custom exceptions:
+## Custom exceptions:
 
 - Derive from Exception.
 - Add meaningful context.
 
-throw vs throw ex:
+## throw vs throw ex:
 
 - throw preserves stack trace.
 - throw ex resets stack trace.
 
-Global exception handling:
+## Global exception handling:
 
 - ASP.NET Core: UseExceptionHandler, middleware.
 - Unhandled exception handlers (AppDomain, TaskScheduler).
 
 # 6. Multithreading & Asynchronous Programming
 
-async / await:
+## async / await:
 
 - State machine rewriting.
 - Avoid blocking calls (.Result, .Wait()).
 - ConfigureAwait.
 
-Task vs Thread vs ValueTask:
+## Task vs Thread vs ValueTask:
 
 - Task: higher-level abstraction.
 - Thread: low-level OS thread.
 - ValueTask: reduces allocations.
 
-TPL (Task Parallel Library):
+## TPL (Task Parallel Library):
 
 - Task.Run, continuations.
 - Parallel loops (Parallel.For / ForEach).
 
-Deadlocks & race conditions:
+## Deadlocks & race conditions:
 
 - UI context deadlock.
 - Shared state modification.
 
-CancellationToken:
+## CancellationToken:
 
 - Cooperative cancellation.
 - Linked tokens.
 - Throwing OperationCanceledException.
 
-Parallel LINQ (PLINQ):
+## Parallel LINQ (PLINQ):
 
 - Parallel execution via .AsParallel().
 - Degree of parallelism.
 
-Locking (Monitor, Mutex, SemaphoreSlim):
+## Locking (Monitor, Mutex, SemaphoreSlim):
 
 - lock keyword (Monitor).
 - Mutex for cross-process locks.
@@ -258,7 +258,7 @@ Locking (Monitor, Mutex, SemaphoreSlim):
 
 # 7. ASP.NET Core
 
-Middleware:
+## Middleware:
 
 - Request/response pipeline.
 - Ordering is crucial—executed top to bottom.
@@ -266,49 +266,49 @@ Middleware:
 - Short-circuiting the pipeline.
 - Decorator-like behavior: middleware wraps the next component.
 
-Routing (attribute & conventional):
+## Routing (attribute & conventional):
 
 - MapControllerRoute, MapDefaultControllerRoute.
 - Attribute routing with constraints.
 - Endpoint routing pipeline.
 - Route precedence & template matching.
 
-Controllers & Action Results:
+## Controllers & Action Results:
 
 - IActionResult, ActionResult<T>.
 - Built-in results: JsonResult, FileResult, StatusCodeResult.
 - FromBody, FromRoute, FromQuery binding.
 - ControllerBase vs Controller.
 
-Filters
+## Filters
 
 - Types: Authorization, Resource, Action, Exception, Result filters.
 - Execution pipeline (pre → action → post).
 - Filter order & dependencies.
 - Decorator-style layering of cross-cutting concerns.
 
-Model binding & validation:
+## Model binding & validation:
 
 - Built-in binders: simple types, complex objects, collections.
 - Validation attributes (DataAnnotations).
 - Custom model binders.
 - ModelState and automatic 400 responses.
 
-Minimal APIs:
+## Minimal APIs:
 
 - MapGet, MapPost, MapPut, etc.
 - Typed results & parameter binding.
 - Filters in minimal APIs.
 - Custom endpoint conventions.
 
-REST principles
+## REST principles
 
 - Statelessness, resource representation.
 - Proper HTTP verb usage.
 - Idempotency and safety.
 - Pagination, sorting, filtering patterns.
 
-Swagger / OpenAPI
+## Swagger / OpenAPI
 
 - Swagger UI configuration.
 - XML comments for method documentation.
@@ -316,14 +316,14 @@ Swagger / OpenAPI
 - Request/response examples.
 
 
-Dependency Injection (Built-in DI Container)
+## Dependency Injection (Built-in DI Container)
 
 - Constructor injection.
 - Lifetimes: Singleton, Scoped, Transient.
 - Options pattern (IOptions, IOptionsSnapshot, IOptionsMonitor).
 - Registering services, factories, HttpClient, typed clients.
 
-Decorator Pattern in ASP.NET Core
+## Decorator Pattern in ASP.NET Core
 
 - Middleware as decorators (wrapping RequestDelegate).
 - Filters as decorators on controller actions.
@@ -332,103 +332,101 @@ Decorator Pattern in ASP.NET Core
 - - Typed clients + custom handlers.
 - DI decorator pattern using Scrutor or manual registration.
 
-HttpClient & DelegatingHandlers:
+## HttpClient & DelegatingHandlers:
 
 - Typed and named HttpClient.
 - Retry, timeout, and fallback policies.
 - Polly integration for resilience.
 - Message handler pipeline (decorator chain).
 
-gRPC:
+## gRPC:
 
 - gRPC services for high-performance binary communication.
 - Unary, streaming, bidirectional calls.
 - Protobuf contracts.
 
-SignalR
+## SignalR
 
 - Real-time messaging.
 - Hubs and strongly typed hub clients.
 - Scaling with Redis backplane.
 
-Hosted Services & Background Tasks:
+## Hosted Services & Background Tasks:
 
 - IHostedService, BackgroundService.
 - Long-running tasks.
 - Timer services.
 - Queue-based background workers.
 
-File Uploads & Downloads
+## File Uploads & Downloads
 
 - Streaming upload.
 - Large file handling.
 - Range responses for downloads.
 
-Health Checks
+## Health Checks
 
 - liveness vs readiness probes.
 - Custom health checks.
 - HealthCheck UI integration.
 
-Globalization & Localization:
+## Globalization & Localization:
 
 - Resource files (.resx).
 - Culture providers.
 - Localization middleware.
 
-Rate Limiting Middleware
+## Rate Limiting Middleware
 
 - Fixed window, sliding window.
 - Per-user / per-IP limits.
 - Named policy configuration.
 
-Security: 
+## Security: 
 
-Authentication & Authorization:
+### Authentication & Authorization:
 
 - Cookie auth, JWT auth.
 - Policy-based authorization.
 - Role and claims-based access.
 
-JWT:
+### JWT:
 
 - Token validation parameters.
 - Signing credentials & lifetime.
 - Access vs refresh tokens.
 
-Cookies:
+### Cookies:
 
 - HttpOnly, Secure, SameSite.
 - Cookie policy middleware.
 
-Identity:
+### Identity:
 
 - User store, role store.
 - Token providers (confirmation, reset).
 - Customizing password & lockout policies.
 
-CORS:
+### CORS:
 
 - Preflight vs simple requests.
 - AllowOrigin, AllowHeaders, AllowMethods.
 - Per-endpoint CORS policies.
 
-Performance:
-
-Caching:
+## Caching:
 
 - In-memory, distributed (Redis), response caching.
 - Cache invalidation strategies.
 - Output caching (ASP.NET Core 7+).
 
-Logging:
+## Logging:
 
 - ILogger<T>.
 - Log levels and filtering.
 - Structured logging (Serilog, Seq, App Insights).
 - Logging scopes & correlation IDs.
 
-Configuration providers:
+## Configuration providers:
 
 - appsettings.json hierarchy.
 - Environment-specific config.
@@ -437,60 +435,59 @@ Configuration providers:
 
 # 8. Entity Framework Core
 
-Code-first
+## Code-first
 
 - luent API vs DataAnnotations.
 - DbSet, DbContext.
 
-Migrations
+## Migrations
 
 - Add-Migration, Update-Database.
 - Up/Down methods.
 - Seeding.
 
-LINQ queries
+## LINQ queries
 
 - Translating to SQL.
 - Tracking vs NoTracking queries.
 
-
-Relationships & navigation properties
+## Relationships & navigation properties
 
 - One-to-many, many-to-many.
 - Shadow properties.
 - Foreign key conventions.
 
-Eager, lazy, explicit loading:
+## Eager, lazy, explicit loading:
 
 - Include/ThenInclude.
 - Lazy loading proxies.
 - Explicit loading via context.Entry.
 
-Transactions:
+## Transactions:
 
 - BeginTransaction.
 - SaveChanges + rollback.
 
-Repository & Unit of Work patterns:
+## Repository & Unit of Work patterns:
 
 - Abstraction over EF Core.
 - Avoid over-abstraction pitfalls.
 
 # 9. Design Patterns
 
-Creational: Singleton, Factory, Builder
+## Creational: Singleton, Factory, Builder
 
 - Singleton: thread-safety, lazy initialization.
 - Factory: encapsulated object creation.
 - Builder: step-by-step configuration.
 
-Structural: Adapter, Decorator, Facade
+## Structural: Adapter, Decorator, Facade
 
 - Adapter: incompatible interfaces.
 - Decorator: add behavior dynamically.
 - Facade: simplified interface.
 
-Behavioral: Strategy, Observer, Command
+## Behavioral: Strategy, Observer, Command
 
 - Strategy: interchangeable algorithms.
 - Observer: event-based notifications.
@@ -498,25 +495,25 @@ Behavioral: Strategy, Observer, Command
 
 # 10. Testing
 
-xUnit
+## xUnit
 
 - Facts vs Theories.
 - Test fixtures.
 - Assertions.
 
-Moq, NSubstitute
+## Moq, NSubstitute
 
 - Mocking interfaces.
 - Verifying calls.
 - Setup/Returns patterns.
 
-Unit testing best practices
+## Unit testing best practices
 
 - Arrange-Act-Assert.
 - Test isolation.
 - Avoid hitting real DB/services.
 
-Integration testing
+## Integration testing
 
 - WebApplicationFactory.
 - TestServer.
@@ -524,31 +521,31 @@ Integration testing
 
 # 11. SOLID Principles
 
-S — Single Responsibility Principle:
+## S — Single Responsibility Principle:
 
 - A class should have only one reason to change.
 - Improves readability and reduces coupling.
 - Example
 
-O — Open/Closed Principle:
+## O — Open/Closed Principle:
 
 - Open for extension, closed for modification.
 - Achieved via interfaces, inheritance, strategy pattern.
 - Reduces code changes that risk breaking existing behavior.
 
-L — Liskov Substitution Principle:
+## L — Liskov Substitution Principle:
 
 - Subtypes must be substitutable for their base types.
 - Avoid violating expected behavior (e.g., throwing unexpected exceptions).
 - Ensures reliable polymorphism.
 
-I — Interface Segregation Principle:
+## I — Interface Segregation Principle:
 
 - Prefer smaller, more specific interfaces over large “fat” ones.
 - Prevents classes from being forced to implement unused members.
 - Encourages cleaner abstractions.
 
-D — Dependency Inversion Principle:
+## D — Dependency Inversion Principle:
 
 - High-level modules should not depend on low-level modules; depend on abstractions.
 - Inversion of control (IoC) containers help enforce this.
