@@ -477,21 +477,27 @@
 
 ## Creational: Singleton, Factory, Builder
 
-- Singleton: thread-safety, lazy initialization.
-- Factory: encapsulated object creation.
-- Builder: step-by-step configuration.
+### Singleton:
+
+### Factory:
+
+### Builder:
 
 ## Structural: Adapter, Decorator, Facade
 
-- Adapter: incompatible interfaces.
-- Decorator: add behavior dynamically.
-- Facade: simplified interface.
+### Adapter:
+
+### Decorator:
+
+### Facade:
 
 ## Behavioral: Strategy, Observer, Command
 
-- Strategy: interchangeable algorithms.
-- Observer: event-based notifications.
-- Command: encapsulated operations.
+### Strategy: 
+
+### Observer:
+
+### Command: 
 
 # 10. Testing
 
