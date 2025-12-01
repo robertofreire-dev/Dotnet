@@ -1,4 +1,4 @@
-1. C# Language Fundamentals
+# 1. C# Language Fundamentals
 
 Value vs Reference types:
 
@@ -63,7 +63,7 @@ Pattern matching:
 
 - Type patterns, property patterns, switch expressions.
 
-2. Object-Oriented Programming (OOP)
+# 2. Object-Oriented Programming (OOP)
 
 Encapsulation:
 
@@ -99,7 +99,7 @@ Method Overloading & Overriding:
 - Overriding: virtual, override, sealed override.
 - Shadowing: new keyword.
 
-3. Advanced C# Concepts
+# 3. Advanced C# Concepts
 
 Delegates & Events:
 
@@ -154,7 +154,7 @@ Span<T>, Memory<T>:
 - High-performance memory access.
 - Avoiding allocations (e.g., Span<byte>).
 
-4. Memory Management
+# 4. Memory Management
 
 Stack vs Heap:
 
@@ -191,7 +191,7 @@ Memory leaks (event handlers, static refs):
 - Static collections holding references.
 - Captured closures.
 
-5. Exception Handling
+# 5. Exception Handling
 
 try / catch / finally:
 
@@ -214,7 +214,7 @@ Global exception handling:
 - ASP.NET Core: UseExceptionHandler, middleware.
 - Unhandled exception handlers (AppDomain, TaskScheduler).
 
-6. Multithreading & Asynchronous Programming
+# 6. Multithreading & Asynchronous Programming
 
 async / await:
 
@@ -256,7 +256,7 @@ Locking (Monitor, Mutex, SemaphoreSlim):
 - ReaderWriterLockSlim.
 - Semaphore vs SemaphoreSlim.
 
-8. ASP.NET Core
+# 7. ASP.NET Core
 
 Middleware:
 
@@ -435,7 +435,7 @@ Configuration providers:
 - Azure Key Vault, secrets manager.
 - Custom providers.
 
-9. Entity Framework Core
+# 8. Entity Framework Core
 
 Code-first
 
@@ -476,7 +476,7 @@ Repository & Unit of Work patterns:
 - Abstraction over EF Core.
 - Avoid over-abstraction pitfalls.
 
-10. Design Patterns
+# 9. Design Patterns
 
 Creational: Singleton, Factory, Builder
 
@@ -496,7 +496,7 @@ Behavioral: Strategy, Observer, Command
 - Observer: event-based notifications.
 - Command: encapsulated operations.
 
-11. Testing
+# 10. Testing
 
 xUnit
 
@@ -522,7 +522,7 @@ Integration testing
 - TestServer.
 - In-memory DB.
 
-SOLID Principles
+# 11. SOLID Principles
 
 S — Single Responsibility Principle:
 
