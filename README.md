@@ -1,5 +1,20 @@
 # 1. C# Language Fundamentals
 
+## const vs readonly
+- const: compile-time constant, must be assigned with literal or const expression.
+- readonly: runtime constant; can be assigned in constructor.
+
+## Common C# keywords (sealed, protected, internal, etc):
+
+- sealed: prevents inheritance (sealed class) or prevents overriding (sealed override).
+- protected: accessible within the class and derived classes.
+- internal: accessible within the same assembly.
+- protected internal: accessible via either protected OR internal.
+- private protected: accessible via protected AND internal (same assembly + subclass).
+- with: used for record non-destructive mutation.
+- virtual, override, abstract: method polymorphism.
+- static: belongs to the type, not instance.
+
 ## Value vs Reference types:
 
 - Value types stored on stack; reference types on heap (conceptually).
@@ -99,6 +114,32 @@
 - Overriding: virtual, override, sealed override.
 - Shadowing: new keyword.
 
+## Interface vs Abstract class:
+
+- Interface: only contracts; no fields; supports multiple inheritance; default interface methods allowed.
+- Abstract class: can contain fields, constructors, shared code, non-abstract methods.
+- Use interfaces for capabilities; abstract classes for shared base behavior.
+
+## Inheritance vs Composition:
+
+- Inheritance: “is-a” relationship, reuse via subclassing.
+- Composition: “has-a” relationship, reuse by containing other objects.
+- Prefer composition when possible to reduce coupling.
+
+## Class, Struct, and Record:
+
+- class: reference type, supports inheritance.
+- struct: value type, lightweight, no inheritance except interfaces.
+- record / record class: reference type with built-in value equality.
+- record struct: value type with value equality.
+- Great for immutable data.
+
+## Static constructor:
+
+- Executes once per type, before first use.
+- Cannot have parameters.
+- Used to initialize static fields
+
 # 3. Advanced C# Concepts
 
 ## Delegates & Events:
@@ -162,23 +203,20 @@
 - Execution context stack frames.
 - Large object heap (LOH).
 
-## Garbage Collection:
+## Garbage Collector:
 
+- Automatic memory management; frees unreachable objects
 - Generations (0,1,2).
 - Finalization queue.
 - Server vs workstation GC.
 - Forced GC: GC.Collect() (discouraged).
+- Finalizers: ~ClassName(); used for unmanaged cleanup.
+- IDisposable used for deterministic resource cleanup.
 
 ## IDisposable & using:
 
 - Deterministic cleanup.
 - IAsyncDisposable and await using.
-
-## Finalizers:
-
-- ~ClassName().
-- Costly; use only when needed.
-- Interaction with GC.
 
 ## Boxing & Unboxing:
 
@@ -227,6 +265,10 @@
 - Task: higher-level abstraction.
 - Thread: low-level OS thread.
 - ValueTask: reduces allocations.
+
+## Multiple async tasks at onc
+
+- Task.WhenAll
 
 ## TPL (Task Parallel Library):
 
@@ -615,3 +657,12 @@
 - High-level modules should not depend on low-level modules; depend on abstractions.
 - Inversion of control (IoC) containers help enforce this.
 - Promotes testability and loose coupling.
+
+
+# 12. Performance Profiling
+
+- dotnet-trace
+- dotnet-dump
+- PerfView
+- BenchmarkDotNet
+- Profiling memory leaks & CPU issues
